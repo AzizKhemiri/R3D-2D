@@ -13,7 +13,7 @@ A web-based application that converts 2D images into 3D voxel-based models using
   - [Backend Setup](#backend-setup)
 - [Usage](#usage)
 - [Dependencies](#dependencies)
-- [Build and Deployment](#build-and-deployment)
+- [Build and Deployment](#deployment)
 - [License](#license)
 
 ---
@@ -48,19 +48,17 @@ R3D2D
 │
 ├── Backend/                      # Flask backend with GAN integration
 │   ├── app.py                    # Main backend application
-│   ├── gan_model.py              # GAN model functions and utilities
-│   ├── models/                   # GAN architecture definitions
-│   │   ├── generator.py          # Generator model for 3D reconstruction
+│   ├── classVAE.py               # GAN model functions and utilities
+│   ├── VAE/                      # VAE architecture definitions
+│   │   ├── vae_model.pth          # VAE Generator model for 3D reconstruction
 │   │   └── utils.py              # Utility functions for model loading and preprocessing
 │   ├── static/                   # Folder for React build files (after deployment)
 │   ├── requirements.txt          # List of Python dependencies
 │   └── README.md                 # Backend-specific documentation (if any)
 │
 ├── Notebooks/                    # Jupyter notebooks for experiments and analysis
-│   ├── R3D2D.ipynb         # main notebook
-│
-├── Presentations/                # Folder for project presentations
-│   └── presentation.pptx    # Final presentation slides
+│   ├── VAEdfinal.ipynb           # main notebook
+│   └── test_vae.ipynb            # test notebook 
 │
 ├── README.md                     # Project documentation (this file)
 └── requirements.txt              # Global project dependencies for Python
@@ -112,7 +110,7 @@ To build the production-ready app:
 ```bash
   npm run build
 ```
-Backend Setup
+### Backend Setup
 
 Navigate to the backend directory:
 
@@ -138,7 +136,8 @@ python app.py
 
 
 
-## Usage/Examples
+## Usage
+Examples
 
 ```javascript
 1. Start both the frontend and backend servers.
